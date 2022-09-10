@@ -1,0 +1,93 @@
+ 
+
+function test (t:array ofinteger ;el:integer)
+var
+i: integer;
+
+begin 
+i=-1
+repeat 
+i=i+1 ;
+until (i>t.length or t[i]=el )
+return (t[i]=el)
+END_test 
+  
+
+
+ALGORITHM sol1
+VAR 
+i,j,sum:INTEGER ; 
+/* common elements= cm */
+s1,s2,cm: rray of integer ;
+
+s0=array of 2array[s1,s2]
+BEGIN
+    new:=-1
+    FOR j FROM 0 TO 1  step 1  DO 
+                sum:=s0[j+1][0]
+                FOR i FROM 1 TO s0[j+1].length-1 step 1  DO 
+                    
+                    if (!test(s0[j],s0[j][i]) ) do 
+                    sum:=sum+s0[j][i];
+                     
+                                
+                    else if ( !isEmpty(cm) AND !test(cm,s0[j][i])  )
+                        new:= new+1
+                        cm[new]:=s0[j][i]      /* cm.enqueue( s0[j][i] ) */
+                      writeln(cm[new])
+                    END if
+
+            
+    END
+ END
+/* dzl 3al tachye7 el ri9 X'D konet najem ne5dem 3Ady 9bal mataf el pour ba3ed el 5edma na3mel s0=s1;s1=s2;s2=s0  */
+
+
+
+
+ALGORITHM sol2
+
+VAR 
+s1,s2:array of integer 
+sum:intger;
+hash = hash_table<integer,integer> ;
+
+begin 
+
+                for i from 1 to maxlength(s1,S2) step 1do 
+                hash.insert(i*2-1  ,s1[i-1]) ;
+                hash.insert(i*2    ,s2[i-1]) ;
+                end_for
+for i=1 
+ for i from 1 to peek(hash.key)-1 step 1do 
+     if  (!test(hash))
+       sum:=sum+1
+            else  
+       ch:=ch+"hash.val"+","
+
+writeln(ch)
+
+
+end 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          FOR j FROM 1 TO 10 STEP s2.length step 1 DO 
+                if (s1[i]=s1[j]) then 
+                    new:= new+1;
+                    break ; 
+                END_IF
+ END_FOR 
